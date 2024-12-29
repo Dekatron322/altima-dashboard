@@ -2,8 +2,6 @@
 import React, { useEffect, useState } from "react"
 import { IoClose } from "react-icons/io5"
 
-
-
 interface AddEstateModalProps {
   isOpen: boolean
   onClose: () => void
@@ -32,8 +30,6 @@ const EditPowerChargeModal: React.FC<AddEstateModalProps> = ({ isOpen, onClose, 
     onClose()
   }
 
-  
-
   if (!isOpen) return null
 
   return (
@@ -41,8 +37,6 @@ const EditPowerChargeModal: React.FC<AddEstateModalProps> = ({ isOpen, onClose, 
       <div
         className="relative rounded-md bg-white p-10 max-sm:mx-8 max-sm:w-full max-sm:p-4  xl:max-w-[783px]"
         data-aos="fade-up"
-        
-        
       >
         <button onClick={onClose} className="absolute -right-7 -top-7 rounded-full bg-[#FFFFFF] p-2">
           <IoClose size={16} />

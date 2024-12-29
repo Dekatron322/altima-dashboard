@@ -49,13 +49,10 @@ const Page: React.FC = () => {
     }
   }
 
-
   return (
     <>
       <div className="flex h-screen w-full items-center justify-center bg-[#22266A]">
-        <div
-          className="auth flex rounded-[20px] bg-[#FFFFFF] max-sm:mb-40 max-sm:w-[95%] xl:max-w-[434px]"
-        >
+        <div className="auth flex rounded-[20px] bg-[#FFFFFF] max-sm:mb-40 max-sm:w-[95%] xl:max-w-[434px]">
           <div className="w-full justify-center px-[53px] py-[60px] max-sm:px-7">
             <div className=" flex items-center justify-center">
               <Image src="AuthImages/rafiki.svg" width={233.48} height={177.81} alt="profile" />

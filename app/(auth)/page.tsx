@@ -62,21 +62,17 @@ const Page: React.FC = () => {
   // }
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-      event.preventDefault()
-      setLoading(true)
-      setError(null)
-  
-      
-        setShowSuccessNotification(true)
-        await new Promise((resolve) => setTimeout(resolve, 3000))
-  
-        setLoading(false)
-  
-        router.push("/dashboard")
-      
-    }
+    event.preventDefault()
+    setLoading(true)
+    setError(null)
 
+    setShowSuccessNotification(true)
+    await new Promise((resolve) => setTimeout(resolve, 3000))
 
+    setLoading(false)
+
+    router.push("/dashboard")
+  }
 
   // UseEffect to automatically hide notifications after a timeout
   useEffect(() => {
@@ -92,16 +88,12 @@ const Page: React.FC = () => {
 
   return (
     <section className="flex h-screen flex-grow justify-center bg-[#FFFFFF]">
-      <div className="flex flex-col w-full items-center justify-center">
-      <div className="mb-4 flex items-center justify-center">
-              <img src="/AuthImages/Logo.png"  alt="profile" />
-            </div>
-        <div
-          className=" border flex h-auto rounded-[20px]  bg-[#F9F9F9] max-sm:w-[95%] md:w-[500px] xl:max-w-[500px]"
-          
-        >
+      <div className="flex w-full flex-col items-center justify-center">
+        <div className="mb-4 flex items-center justify-center">
+          <img src="/AuthImages/Logo.png" alt="profile" />
+        </div>
+        <div className=" flex h-auto rounded-[20px] border  bg-[#F9F9F9] max-sm:w-[95%] md:w-[500px] xl:max-w-[500px]">
           <div className="w-full justify-center px-[53px] py-[60px] max-sm:px-7">
-            
             <div className="mb-8 flex items-center justify-center">
               <p className="text-2xl font-semibold">Sign In</p>
             </div>
@@ -163,8 +155,6 @@ const Page: React.FC = () => {
                 </button>
               </div>
             </form>
-
-           
           </div>
         </div>
         <Footer />

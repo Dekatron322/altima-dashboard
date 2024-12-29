@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { IoClose } from "react-icons/io5"
 
-
 import Image from "next/image"
 import GenerateInvoiceModal from "./GenerateInvoiceModal" // Adjust the import path as necessary
 
@@ -14,8 +13,6 @@ interface ReceiptModalProps {
 const ViewMaintenanceModal: React.FC<ReceiptModalProps> = ({ isOpen, onClose, receiptData }) => {
   const [isGenerateInvoiceModalOpen, setIsGenerateInvoiceModalOpen] = useState(false)
 
-  
-
   if (!isOpen) return null
 
   const handleGenerateInvoice = () => {
@@ -27,12 +24,7 @@ const ViewMaintenanceModal: React.FC<ReceiptModalProps> = ({ isOpen, onClose, re
   return (
     <>
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-        <div
-          className="relative rounded-md bg-white xl:max-w-[783px]"
-          data-aos="fade-up"
-          
-          
-        >
+        <div className="relative rounded-md bg-white xl:max-w-[783px]" data-aos="fade-up">
           <button onClick={onClose} className="absolute -right-7 -top-7 rounded-full bg-[#FFFFFF] p-2">
             <IoClose size={16} />
           </button>

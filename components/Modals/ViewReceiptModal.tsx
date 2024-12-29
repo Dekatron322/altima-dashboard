@@ -2,8 +2,6 @@ import Image from "next/image"
 import React, { useEffect } from "react"
 import { IoClose } from "react-icons/io5"
 
-
-
 interface ReceiptModalProps {
   isOpen: boolean
   onClose: () => void
@@ -11,17 +9,11 @@ interface ReceiptModalProps {
 }
 
 const ReceiptModal: React.FC<ReceiptModalProps> = ({ isOpen, onClose, receiptData }) => {
-  
   if (!isOpen) return null
 
   return (
     <div className="fixed inset-0 z-50  flex items-center justify-center bg-black bg-opacity-50">
-      <div
-        className="relative rounded-md bg-white max-sm:mx-8 max-sm:w-full xl:max-w-[783px]"
-        data-aos="fade-up"
-        
-        
-      >
+      <div className="relative rounded-md bg-white max-sm:mx-8 max-sm:w-full xl:max-w-[783px]" data-aos="fade-up">
         <button onClick={onClose} className="absolute -right-7 -top-7 rounded-full bg-[#FFFFFF] p-2">
           <IoClose size={16} />
         </button>

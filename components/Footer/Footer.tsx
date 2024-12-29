@@ -22,9 +22,7 @@ const Footer = () => {
   }
   return (
     <div className="fixed bottom-0 w-full bg-[#000000] px-7 py-4 max-sm:bottom-0 max-sm:right-0">
-      <p className="text-center text-[#F3F3F3]">
-        @2025 All Rights Reserved Altima
-      </p>
+      <p className="text-center text-[#F3F3F3]">@2025 All Rights Reserved Altima</p>
     </div>
   )
 }

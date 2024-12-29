@@ -3,7 +3,6 @@ import Image from "next/image"
 import { useRouter } from "next/navigation"
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight"
 
-
 import CustomTable from "components/Tables/EstateTable"
 import CustomPagination from "components/Pagination/CustomPagination"
 import AddAdminModal from "components/Modals/AddAdminModal"
@@ -59,8 +58,6 @@ const AdminTab: React.FC = () => {
   const [itemsPerPage, setItemsPerPage] = useState(4)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
-
-  
 
   const columns = useMemo(
     () => [
@@ -160,8 +157,6 @@ const RolesTab: React.FC = () => {
   const [itemsPerPage, setItemsPerPage] = useState(5)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [searchQuery, setSearchQuery] = useState("")
-
-  
 
   const columns = useMemo(
     () => [

@@ -7,8 +7,6 @@ import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp"
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight"
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown"
 
-
-
 interface PaymentAccount {
   id: number
   name: string
@@ -62,8 +60,6 @@ const DashboardMain: React.FC = () => {
     }
   }
 
-  
-
   const handlePaymentClick = (accountId: number) => {
     router.push(`/accounts/details/${accountId}`)
   }
@@ -83,12 +79,7 @@ const DashboardMain: React.FC = () => {
 
   const renderFinancialMetrics = () => {
     return (
-      <div
-        className="h-auto w-full bg-[#ffffff] px-10 max-sm:px-4"
-        
-        
-        
-      >
+      <div className="h-auto w-full bg-[#ffffff] px-10 max-sm:px-4">
         <div className="my-7 flex w-full items-center justify-between">
           <h5 className="text-[28px] font-medium max-sm:text-lg">Financial Metrics</h5>
           <div className="relative max-sm:hidden">
@@ -128,7 +119,8 @@ const DashboardMain: React.FC = () => {
             <div key={account.id} className="flex w-full cursor-pointer gap-2">
               <div
                 onClick={() => handlePaymentClick(account.id)}
-                className="small-card  rounded-md p-2 transition duration-500 hover:border-none hover:shadow-xl md:border">
+                className="small-card  rounded-md p-2 transition duration-500 hover:border-none hover:shadow-xl md:border"
+              >
                 <div className="mb-[19px] flex items-start justify-between max-sm:mb-2">
                   <div className="mb-4 max-sm:mb-1">
                     <h5 className="font-semibold text-[#044982]">{account.name}</h5>
@@ -169,12 +161,7 @@ const DashboardMain: React.FC = () => {
 
   const renderOccupancyRate = () => {
     return (
-      <div
-        className="h-auto w-full bg-[#F7F7F9] px-10 max-sm:px-4"
-        
-        
-        
-      >
+      <div className="h-auto w-full bg-[#F7F7F9] px-10 max-sm:px-4">
         <div className="my-7 flex items-center justify-between">
           <h5 className="text-[28px] font-medium max-sm:text-lg">Occupancy Rate</h5>
           <div className="relative"></div>
@@ -233,12 +220,7 @@ const DashboardMain: React.FC = () => {
 
   const renderMaintenanceStatus = () => {
     return (
-      <div
-        className="h-auto w-full bg-[#F7F7F9] px-10 max-sm:px-4"
-        
-        
-        
-      >
+      <div className="h-auto w-full bg-[#F7F7F9] px-10 max-sm:px-4">
         <div className="my-7 flex items-center justify-between">
           <h5 className="text-[28px] font-medium max-sm:text-lg">Occupancy Rate</h5>
           <div className="relative"></div>

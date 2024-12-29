@@ -71,8 +71,6 @@ const Page: React.FC = () => {
     }
   }
 
-
-
   useEffect(() => {
     let successTimeout: NodeJS.Timeout
     let errorTimeout: NodeJS.Timeout
@@ -98,9 +96,7 @@ const Page: React.FC = () => {
   return (
     <section className="flex h-screen flex-grow justify-center bg-[#22266A]">
       <div className="flex  w-full items-center justify-center">
-        <div
-          className=" mb-20 flex h-auto rounded-[20px]  bg-[#FFFFFF] max-sm:w-[95%]  xl:max-w-[434px]"
-        >
+        <div className=" mb-20 flex h-auto rounded-[20px]  bg-[#FFFFFF] max-sm:w-[95%]  xl:max-w-[434px]">
           <div className="w-full justify-center px-[53px] py-[60px] max-sm:px-7">
             <div className="mb-8 flex items-center justify-center">
               <Image src="/AuthImages/amd-logo.png" width={250} height={74} alt="profile" />

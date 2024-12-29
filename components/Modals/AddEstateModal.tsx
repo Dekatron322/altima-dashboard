@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { IoClose } from "react-icons/io5"
 
-
-
 interface Estate {
   id?: number
   estate_name: string
@@ -70,8 +68,6 @@ const AddEstateModal: React.FC<AddEstateModalProps> = ({ isOpen, onClose, onSave
     }
   }
 
-  
-
   if (!isOpen) return null
 
   return (
@@ -79,8 +75,6 @@ const AddEstateModal: React.FC<AddEstateModalProps> = ({ isOpen, onClose, onSave
       <div
         className="relative rounded-md bg-white p-10 max-sm:mx-8 max-sm:w-full max-sm:p-4 xl:max-w-[783px]"
         data-aos="fade-up"
-        
-        
       >
         <button onClick={onClose} className="absolute -right-7 -top-7 rounded-full bg-[#FFFFFF] p-2">
           <IoClose size={16} />
