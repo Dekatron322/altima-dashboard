@@ -32,7 +32,6 @@ module.exports = {
       },
       fontFamily: {
         body: [
-         
           "Inter",
           "gilroy",
           "ui-sans-serif",
@@ -52,7 +51,6 @@ module.exports = {
           "Clash Display",
         ],
         sans: [
-          
           "Inter",
           "gilroy",
           "ui-sans-serif",
