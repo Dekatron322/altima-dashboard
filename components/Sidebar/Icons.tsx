@@ -2,11 +2,11 @@ import Image from "next/image"
 import Link from "next/link"
 export const LogoIcon = () => (
   <>
-    <Link href="/" className="icon-style content-center mb-5">
-      <img src="/AuthImages/Altima-light.png"  alt="dekalo" />
+    <Link href="/" className="icon-style mb-5 content-center">
+      <img src="/AuthImages/Altima-light.png" alt="dekalo" />
     </Link>
-    <Link href="/" className="dark-icon-style content-center mb-5">
-      <img src="/AuthImages/Altima.png"  alt="dekalo" />
+    <Link href="/" className="dark-icon-style mb-5 content-center">
+      <img src="/AuthImages/Altima.png" alt="dekalo" />
     </Link>
   </>
 )
@@ -14,10 +14,10 @@ export const LogoIcon = () => (
 export const CollapsedLogoIcon = () => (
   <>
     <Link href="/" className="icon-style content-center">
-    <img src="/AuthImages/collasped.png"  alt="dekalo" />
+      <img src="/AuthImages/collasped.png" alt="dekalo" />
     </Link>
     <Link href="/" className="dark-icon-style content-center ">
-    <img src="/AuthImages/collasped.png"  alt="dekalo" />
+      <img src="/AuthImages/collasped.png" alt="dekalo" />
     </Link>
   </>
 )

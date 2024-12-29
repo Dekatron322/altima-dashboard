@@ -19,17 +19,17 @@ type SortOrder = "asc" | "desc" | null
 type Order = {
   orderId: string
   customer: string
-  email: string
-  phone: string
   doorModel: string
-  units: number
   payment30: string
+  amount30: string
   payment70: string
+  amount70: string
+  total: string
   orderStatus: string
   date: string
 }
 
-const AltimaEliteOrders = () => {
+const PaymentTable = () => {
   const [sortColumn, setSortColumn] = useState<string | null>(null)
   const [sortOrder, setSortOrder] = useState<SortOrder>(null)
   const [rowsPerPage, setRowsPerPage] = useState(5)
@@ -89,121 +89,121 @@ const AltimaEliteOrders = () => {
     {
       orderId: "#ORD12345",
       customer: "Robert Fox",
-      email: "robertfox@example.com",
-      phone: "(671) 555-0110",
-      doorModel: "Alima Elite",
-      units: 200,
+      doorModel: "Alima Core",
       payment30: "Paid",
+      amount30: "₹3,500,000",
       payment70: "Pending",
+      amount70: "₹3,500,000",
+      total: "₹7,000,000",
       orderStatus: "Confirmed",
       date: "2024-12-19",
     },
     {
       orderId: "#ORD12346",
       customer: "Robert Lee",
-      email: "robertlee@example.com",
-      phone: "(671) 855-0110",
       doorModel: "Alima Elite",
-      units: 210,
       payment30: "Paid",
+      amount30: "₹3,500,000",
       payment70: "Paid",
+      amount70: "₹3,500,000",
+      total: "₹7,000,000",
       orderStatus: "Completed",
       date: "2024-12-20",
     },
     {
       orderId: "#ORD12347",
       customer: "Robert Chang",
-      email: "robertchang@example.com",
-      phone: "(671) 755-0110",
-      doorModel: "Alima Elite",
-      units: 500,
-      payment30: "Paid",
+      doorModel: "Alima Core",
+      payment30: "Not Paid",
+      amount30: "₹3,500,000",
       payment70: "Not Paid",
+      amount70: "₹3,500,000",
+      total: "₹7,000,000",
       orderStatus: "Cancelled",
       date: "2024-12-20",
     },
     {
       orderId: "#ORD12348",
       customer: "Robert Lee",
-      email: "fox@example.com",
-      phone: "(671) 565-0110",
       doorModel: "Alima Elite",
-      units: 1200,
       payment30: "Paid",
+      amount30: "₹3,500,000",
       payment70: "Pending",
-      orderStatus: "Pending",
+      amount70: "₹3,500,000",
+      total: "₹7,000,000",
+      orderStatus: "Delivered",
       date: "2024-12-20",
     },
     {
       orderId: "#ORD12349",
       customer: "Robert Lee",
-      email: "robertfoxx@example.com",
-      phone: "(671) 555-0111",
-      doorModel: "Alima Elite",
-      units: 210,
-      payment30: "Paid",
+      doorModel: "Alima Core",
+      amount30: "₹3,500,000",
+      payment30: "Pending",
       payment70: "Pending",
-      orderStatus: "Confirmed",
+      amount70: "₹3,500,000",
+      total: "₹7,000,000",
+      orderStatus: "Pending",
       date: "2024-12-20",
     },
     {
       orderId: "#ORD12345",
       customer: "Robert Fox",
-      email: "robertfox@example.com",
-      phone: "(671) 555-0110",
-      doorModel: "Alima Elite",
-      units: 200,
+      doorModel: "Alima Core",
       payment30: "Paid",
+      amount30: "₹3,500,000",
       payment70: "Pending",
-      orderStatus: "Completed",
+      amount70: "₹3,500,000",
+      total: "₹7,000,000",
+      orderStatus: "Confirmed",
       date: "2024-12-19",
     },
     {
       orderId: "#ORD12346",
       customer: "Robert Lee",
-      email: "robertlee@example.com",
-      phone: "(671) 855-0110",
       doorModel: "Alima Elite",
-      units: 210,
       payment30: "Paid",
+      amount30: "₹3,500,000",
       payment70: "Paid",
-      orderStatus: "Cancelled",
+      amount70: "₹3,500,000",
+      total: "₹7,000,000",
+      orderStatus: "Completed",
       date: "2024-12-20",
     },
     {
       orderId: "#ORD12347",
       customer: "Robert Chang",
-      email: "robertchang@example.com",
-      phone: "(671) 755-0110",
-      doorModel: "Alima Elite",
-      units: 500,
-      payment30: "Paid",
+      doorModel: "Alima Core",
+      payment30: "Not Paid",
+      amount30: "₹3,500,000",
       payment70: "Not Paid",
-      orderStatus: "Pending",
+      amount70: "₹3,500,000",
+      total: "₹7,000,000",
+      orderStatus: "Cancelled",
       date: "2024-12-20",
     },
     {
       orderId: "#ORD12348",
       customer: "Robert Lee",
-      email: "fox@example.com",
-      phone: "(671) 565-0110",
       doorModel: "Alima Elite",
-      units: 1200,
       payment30: "Paid",
+      amount30: "₹3,500,000",
       payment70: "Pending",
-      orderStatus: "Confirmed",
+      amount70: "₹3,500,000",
+      total: "₹7,000,000",
+      orderStatus: "Delivered",
       date: "2024-12-20",
     },
     {
       orderId: "#ORD12349",
       customer: "Robert Lee",
-      email: "robertfoxx@example.com",
-      phone: "(671) 555-0111",
-      doorModel: "Alima Elite",
-      units: 210,
-      payment30: "Paid",
+      doorModel: "Alima Core",
+      amount30: "₹3,500,000",
+      payment30: "Pending",
       payment70: "Pending",
-      orderStatus: "Confirmed",
+      amount70: "₹3,500,000",
+      total: "₹7,000,000",
+      orderStatus: "Pending",
       date: "2024-12-20",
     },
   ])
@@ -298,7 +298,7 @@ const AltimaEliteOrders = () => {
   return (
     <div className="flex-3 relative mt-5 flex flex-col rounded-md border p-5">
       <div className="flex items-center justify-between border-b py-4">
-        <p className="text-2xl font-medium">Latest Pre-Orders</p>
+        <p className="text-2xl font-medium">All Payments</p>
         <div className="flex gap-4">
           <div className="flex h-[37px] w-[380px] items-center justify-between gap-3 rounded-md border px-3 py-1 text-[#707070]">
             <Image src="/DashboardImages/Search.svg" width={16} height={16} alt="Search Icon" />
@@ -319,9 +319,6 @@ const AltimaEliteOrders = () => {
           <button className="button-oulined" type="button">
             <IoFunnelOutline />
             <p>Filter</p>
-          </button>
-          <button className="button-oulined" type="button">
-            <p>View All Pre-orders</p>
           </button>
         </div>
       </div>
@@ -344,22 +341,7 @@ const AltimaEliteOrders = () => {
                   Customer <RxCaretSort />
                 </p>
               </th>
-              <th
-                className="cursor-pointer whitespace-nowrap border-b border-l px-4 py-4 text-sm"
-                onClick={() => toggleSort("email")}
-              >
-                <p className="flex items-center gap-2">
-                  Email <RxCaretSort />
-                </p>
-              </th>
-              <th
-                className="cursor-pointer whitespace-nowrap border-b border-l px-4 py-4 text-sm"
-                onClick={() => toggleSort("phone")}
-              >
-                <p className="flex items-center gap-2">
-                  Phone <RxCaretSort />
-                </p>
-              </th>
+
               <th
                 className="cursor-pointer whitespace-nowrap border-b border-l px-4 py-4 text-sm"
                 onClick={() => toggleSort("doorModel")}
@@ -368,20 +350,21 @@ const AltimaEliteOrders = () => {
                   Door Model <RxCaretSort />
                 </p>
               </th>
-              <th
-                className="cursor-pointer whitespace-nowrap border-b border-l px-4 py-4 text-sm"
-                onClick={() => toggleSort("units")}
-              >
-                <p className="flex items-center gap-2">
-                  Unit Ordered <RxCaretSort />
-                </p>
-              </th>
+
               <th
                 className="cursor-pointer whitespace-nowrap border-b border-l px-4 py-4 text-sm"
                 onClick={() => toggleSort("payment30")}
               >
                 <p className="flex items-center gap-2">
                   Payment (30%) <RxCaretSort />
+                </p>
+              </th>
+              <th
+                className="cursor-pointer whitespace-nowrap border-b border-l px-4 py-4 text-sm"
+                onClick={() => toggleSort("amount30")}
+              >
+                <p className="flex items-center gap-2">
+                  Amount (30%) <RxCaretSort />
                 </p>
               </th>
               <th
@@ -394,20 +377,21 @@ const AltimaEliteOrders = () => {
               </th>
               <th
                 className="cursor-pointer whitespace-nowrap border-b border-l px-4 py-4 text-sm"
-                onClick={() => toggleSort("orderStatus")}
+                onClick={() => toggleSort("amount70")}
               >
                 <p className="flex items-center gap-2">
-                  Order Status <RxCaretSort />
+                  Amount (70%) <RxCaretSort />
                 </p>
               </th>
               <th
                 className="cursor-pointer whitespace-nowrap border-b border-l px-4 py-4 text-sm"
-                onClick={() => toggleSort("date")}
+                onClick={() => toggleSort("total")}
               >
                 <p className="flex items-center gap-2">
-                  Date <RxCaretSort />
+                  Total <RxCaretSort />
                 </p>
               </th>
+
               <th className="whitespace-nowrap border-b border-l px-4 py-4 text-sm">
                 <p className="flex items-center gap-2">Action</p>
               </th>
@@ -429,31 +413,14 @@ const AltimaEliteOrders = () => {
                     {order.customer}
                   </div>
                 </td>
-                <td className="whitespace-nowrap border-b border-l px-4 py-2 text-sm">
-                  <div className="flex items-center gap-2">
-                    <PiEnvelope />
-                    {order.email}
-                  </div>
-                </td>
-                <td className="whitespace-nowrap border-b border-l px-4 py-2 text-sm">
-                  <div className="flex items-center gap-2">
-                    <PiPhone />
-                    {order.phone}
-                  </div>
-                </td>
+
                 <td className="whitespace-nowrap border-b border-l px-4 py-2 text-sm">
                   <div className="flex items-center gap-2">
                     {doorModelIcons[order.doorModel]}
                     {order.doorModel}
                   </div>
                 </td>
-                <td className="whitespace-nowrap border-b border-l px-4 py-3 text-sm">
-                  <div className="flex items-center gap-2">
-                    <img src="/DashboardImages/Package.png" alt="dekalo" className="icon-style" />
-                    <img src="/DashboardImages/Package-dark.png" alt="dekalo" className="dark-icon-style " />
-                    {order.units}
-                  </div>
-                </td>
+
                 <td className="whitespace-nowrap border-b border-l px-4 py-3 text-sm">
                   <div className="flex">
                     <div
@@ -466,6 +433,7 @@ const AltimaEliteOrders = () => {
                     </div>
                   </div>
                 </td>
+                <td className="whitespace-nowrap border-b border-l px-4 py-3 text-sm">{order.amount30}</td>
                 <td className="flex whitespace-nowrap border-b border-l px-4 py-3 text-sm">
                   <div
                     style={getPaymentStyle(order.payment70)}
@@ -475,26 +443,12 @@ const AltimaEliteOrders = () => {
                     {order.payment70}
                   </div>
                 </td>
-                <td className="whitespace-nowrap border-b border-l px-4 py-3 text-sm">
-                  <div className="flex">
-                    <div
-                      style={getPaymentStyle(order.orderStatus)}
-                      className="flex items-center justify-center gap-1   rounded-full px-2 py-1"
-                    >
-                      <span className="h-2 w-2 rounded-full" style={dotStyle(order.orderStatus)}></span>
-                      {order.orderStatus}
-                    </div>
-                  </div>
-                </td>
-                <td className="whitespace-nowrap border-b border-l px-4 py-1 text-sm">
-                  <div className="flex items-center gap-2 pr-4">
-                    <img src="/DashboardImages/Calendar.png" alt="dekalo" />
-                    {order.date}
-                  </div>
-                </td>
+                <td className="whitespace-nowrap border-b border-l px-4 py-3 text-sm">{order.amount70}</td>
+                <td className="whitespace-nowrap border-b border-l px-4 py-3 text-sm">{order.total}</td>
+
                 <td className="whitespace-nowrap border-b border-l px-4 py-1 text-sm">
                   <div className="flex items-center gap-2 ">
-                    <Link href="/orders/order-details" className="button-oulined" type="button">
+                    <Link href="/payment/payment-detail" className="button-oulined" type="button">
                       <img src="/DashboardImages/Eye.png" alt="dekalo" className="icon-style" />
                       <img src="/DashboardImages/Eye-dark.png" alt="dekalo" className="dark-icon-style" />
                       <p className="text-xs">View Details </p>
@@ -539,7 +493,7 @@ const AltimaEliteOrders = () => {
       <div className="mt-4 flex items-center justify-between">
         <div className="flex items-center gap-1">
           <p>show rows</p>
-          <select value={rowsPerPage} onChange={handleRowsChange} className="select__rows p-1">
+          <select value={rowsPerPage} onChange={handleRowsChange} className=" bg-[#F2F2F2] p-1">
             <option value={5}>5</option>
             <option value={10}>10</option>
             <option value={20}>20</option>
@@ -671,4 +625,4 @@ const AltimaEliteOrders = () => {
   )
 }
 
-export default AltimaEliteOrders
+export default PaymentTable

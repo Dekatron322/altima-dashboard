@@ -22,7 +22,6 @@ const DashboardNav = () => {
     setTheme(isDarkMode ? "light" : "dark")
   }
 
-
   setTimeout(() => setLoading(false), 3000)
 
   const handleCancelSearch = () => {
@@ -49,11 +48,9 @@ const DashboardNav = () => {
 
   return (
     <>
-      <nav className="hidden  border-b  px-16 py-4  max-sm:px-3 md:block containerbg">
+      <nav className="containerbg  hidden  border-b px-16  py-4 max-sm:px-3 md:block">
         <div className="flexBetween">
           <div className="flex content-center gap-32">
-            
-
             <div className="flex h-[45px] w-[380px] items-center justify-between gap-3 rounded-lg border px-3 py-1 text-[#707070]">
               <Image src="/DashboardImages/Search.svg" width={16} height={16} alt="dekalo" />
               <input
@@ -71,47 +68,46 @@ const DashboardNav = () => {
 
           <div className="flex gap-2">
             <div className="flex content-center items-center justify-center gap-5">
-             
               <div className="flex h-[50px] items-center justify-center gap-2 rounded-lg border px-4">
                 <Image src="/DashboardImages/Frame 5518.png" width={32} height={32} alt="avatar" />
-                <p className="font-medium content-center text-sm">Suresh B. P.</p>
+                <p className="content-center text-sm font-medium">Suresh B. P.</p>
 
-                <img src="/DashboardImages/CaretDown.png" alt="dekalo" className="icon-style"/>
-                <img src="/DashboardImages/CaretDown-dark.png" alt="dekalo" className="dark-icon-style"/>
+                <img src="/DashboardImages/CaretDown.png" alt="dekalo" className="icon-style" />
+                <img src="/DashboardImages/CaretDown-dark.png" alt="dekalo" className="dark-icon-style" />
               </div>
             </div>
-          
-          <div
-            className="theme-container flex cursor-pointer items-center rounded-full p-1 transition duration-300"
-            onClick={toggleTheme}
-            style={{
-              position: "relative",
-              width: "80px",
-              height: "45px",
-              borderRadius: "25px",
-            }}
-          >
+
             <div
+              className="theme-container flex cursor-pointer items-center rounded-full p-1 transition duration-300"
+              onClick={toggleTheme}
               style={{
-                position: "absolute",
-                right: isDarkMode ? "calc(100% - 42px)" : "2px",
-                width: "36px",
-                height: "36px",
-                borderRadius: "50%",
-                backgroundColor: isDarkMode ? "#fff" : "#000",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                transition: "right 0.5s ease",
+                position: "relative",
+                width: "80px",
+                height: "45px",
+                borderRadius: "25px",
               }}
             >
-              {isDarkMode ? (
-                <GoMoon style={{ color: "#000", fontSize: "24px" }} />
-              ) : (
-                <WbSunnyIcon style={{ color: "#fff", fontSize: "24px" }} />
-              )}
+              <div
+                style={{
+                  position: "absolute",
+                  right: isDarkMode ? "calc(100% - 42px)" : "2px",
+                  width: "36px",
+                  height: "36px",
+                  borderRadius: "50%",
+                  backgroundColor: isDarkMode ? "#fff" : "#000",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  transition: "right 0.5s ease",
+                }}
+              >
+                {isDarkMode ? (
+                  <GoMoon style={{ color: "#000", fontSize: "24px" }} />
+                ) : (
+                  <WbSunnyIcon style={{ color: "#fff", fontSize: "24px" }} />
+                )}
+              </div>
             </div>
-          </div>
           </div>
         </div>
       </nav>

@@ -1,9 +1,7 @@
 "use client"
 import DashboardNav from "components/Navbar/DashboardNav"
-import { Dash } from "utils"
-import FinanceChart from "components/Chart/FinanceChart"
-import OrdersTable from "components/Tables/OrdersTable"
-import PreOrderTable from "components/Tables/PreOrderTable"
+import { PaymentInfo } from "utils"
+import PaymentTable from "components/Tables/PaymentTable"
 
 interface PaymentAccount {
   id: number
@@ -20,7 +18,7 @@ export default function PreOrder() {
           <DashboardNav />
           <div className="flex flex-col">
             <div className="flex items-center justify-between border-b px-16 py-4">
-              <p className="text-2xl font-medium">Pre-Orders</p>
+              <p className="text-2xl font-medium">Payments</p>
               <div className="flex gap-4">
                 <button className="button-oulined" type="button">
                   <img src="/DashboardImages/Export.png" alt="dekalo" className="icon-style" />
@@ -37,18 +35,13 @@ export default function PreOrder() {
                   <img src="/DashboardImages/MailStar-dark.png" alt="dekalo" className="dark-icon-style" />
                   <p>Start Email Campaign</p>
                 </button>
-                <div className="border-l"></div>
-                <button className="button-primary-two" type="button">
-                  <img src="/DashboardImages/Plus.png" alt="dekalo" />
-                  <p>Add Pre-order</p>
-                </button>
               </div>
             </div>
 
             <div className="max-sm-my-4 flex w-full gap-6 px-16  max-md:flex-col max-md:px-0 max-sm:px-3 md:my-8">
               <div className="w-full">
                 <div className="flex w-full gap-6 max-lg:grid max-lg:grid-cols-2">
-                  {Dash.map((account: PaymentAccount, index: number) => (
+                  {PaymentInfo.map((account: PaymentAccount, index: number) => (
                     <div key={account.id} className="flex w-full cursor-pointer gap-2">
                       <div
                         // onClick={() => handlePaymentClick(account.id)}
@@ -60,7 +53,7 @@ export default function PreOrder() {
                           <img src="/DashboardImages/CaretRight-dark.png" alt="" className="dark-icon-style" />
                         </div>
 
-                        <h5 className="my-4 font-medium text-[#727272]">{account.name}</h5>
+                        <h5 className="my-2 font-medium text-[#727272]">{account.name}</h5>
                         <div className="flex items-end justify-between">
                           <div>
                             <h5 className="text-3xl font-medium max-sm:text-lg  ">{account.balance}</h5>
@@ -79,7 +72,7 @@ export default function PreOrder() {
                   ))}
                 </div>
 
-                <PreOrderTable />
+                <PaymentTable />
               </div>
             </div>
           </div>

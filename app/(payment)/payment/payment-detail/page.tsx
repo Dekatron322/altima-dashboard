@@ -1,6 +1,7 @@
 "use client"
 import DashboardNav from "components/Navbar/DashboardNav"
 import OrderInfo from "components/OrderInfo/OrderInfo"
+import PaymentInfo from "components/PaymentInfo/PaymentInfo"
 import { useEffect, useState } from "react"
 import { FaRegCheckCircle } from "react-icons/fa"
 import { FiXCircle } from "react-icons/fi"
@@ -71,7 +72,7 @@ export default function Dashboard() {
 
             <div className="max-sm-my-4 flex w-full gap-6 px-32  max-md:flex-col max-md:px-0 max-sm:px-3 md:my-8">
               <div className="w-full">
-                <OrderInfo />
+                <PaymentInfo />
               </div>
             </div>
           </div>

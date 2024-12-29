@@ -605,7 +605,7 @@ export const Accounts = [
   },
 ]
 
-export const Dash= [
+export const Dash = [
   {
     id: 1,
     src: "/DashboardImages/Frame 47603.png",
@@ -617,7 +617,6 @@ export const Dash= [
     src: "/DashboardImages/Frame 47603 (1).png",
     name: "Total Revenue (30%)",
     balance: "₹3,500,000",
-
   },
 
   {
@@ -631,6 +630,34 @@ export const Dash= [
     src: "/DashboardImages/Frame 47603 (3).png",
     name: "Customer Return Rate",
     balance: "5(10%)",
+  },
+]
+
+export const PaymentInfo = [
+  {
+    id: 1,
+    src: "/DashboardImages/Frame 47603.png",
+    name: "Total 30% Payments Collected",
+    balance: "₹3,500,000",
+  },
+  {
+    id: 2,
+    src: "/DashboardImages/Frame 47603 (1).png",
+    name: "Total 70% Payments Pending",
+    balance: "₹3,500,000",
+  },
+
+  {
+    id: 3,
+    src: "/DashboardImages/Frame 47603 (2).png",
+    name: "Outstanding Balance (70%)",
+    balance: "₹3,500,000",
+  },
+  {
+    id: 4,
+    src: "/DashboardImages/Frame 47603 (3).png",
+    name: "Total Revenue Collected",
+    balance: "₹3,500,000",
   },
 ]
 

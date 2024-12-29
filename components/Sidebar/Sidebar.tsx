@@ -23,23 +23,20 @@ const SideBar = () => {
           <Link href="/">{isCollapsed ? <CollapsedLogoIcon /> : <LogoIcon />}</Link>
         </div>
 
-        <div className="h-full border-b border-[#E4E4E4] lg:h-auto lg:space-y-1 mb-2">
+        <div className="mb-2 h-full border-b border-[#E4E4E4] lg:h-auto lg:space-y-1">
           <Links isCollapsed={isCollapsed} />
         </div>
         <div className="h-full border-b border-[#E4E4E4] lg:h-auto lg:space-y-1">
           <SecondLinks isCollapsed={isCollapsed} />
         </div>
       </div>
-      <div className="my-4  items-center flex h-auto border-t px-6  justify-between" >
-        <div
-          
-          className="flex pt-5 items-center space-x-2 border-0 border-black text-[#747A80] "
-        >
+      <div className="my-4  flex h-auto items-center justify-between border-t  px-6">
+        <div className="flex items-center space-x-2 border-0 border-black pt-5 text-[#747A80] ">
           <img src="/DashboardImages/Profile.png" />
-          <p className="hidden text-xs font-semibold bottom-bar lg:block 2xl:text-base">Official Site</p>
+          <p className="bottom-bar hidden text-xs font-semibold lg:block 2xl:text-base">Official Site</p>
         </div>
-        <img src="/DashboardImages/CaretDoubleVertical.png" className="pt-5 icon-style"/>
-        <img src="/DashboardImages/CaretDoubleVertical-dark.png" className="pt-5 dark-icon-style"/>
+        <img src="/DashboardImages/CaretDoubleVertical.png" className="icon-style pt-5" />
+        <img src="/DashboardImages/CaretDoubleVertical-dark.png" className="dark-icon-style pt-5" />
       </div>
     </div>
   )
