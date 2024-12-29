@@ -1,6 +1,6 @@
 "use client"
 import DashboardNav from "components/Navbar/DashboardNav"
-import AllCustomers from "components/Tables/allCustomers"
+import AllCustomers from "components/Tables/AllCustomers"
 import { CustomerInfo } from "utils"
 
 interface PaymentAccount {

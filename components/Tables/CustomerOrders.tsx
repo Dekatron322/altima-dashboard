@@ -4,7 +4,7 @@ import { MdOutlineCheckBoxOutlineBlank } from "react-icons/md"
 import { PiEnvelope, PiNoteBold, PiPhone, PiShieldChevronFill, PiShieldPlusFill } from "react-icons/pi"
 import Image from "next/image"
 import { IoMdFunnel } from "react-icons/io"
-import { IoFunnelOutline } from "react-icons/io5"
+import { IoFunnelOutline, IoLocationOutline } from "react-icons/io5"
 import { BiSolidLeftArrow, BiSolidRightArrow } from "react-icons/bi"
 import { GoXCircle } from "react-icons/go"
 import { WiTime3 } from "react-icons/wi"
@@ -21,12 +21,16 @@ type Order = {
   customer: string
   email: string
   phone: string
+  doorModel: string
   units: number
-  date: string
+  payment30: string
+  payment70: string
   orderStatus: string
+  location: string
+  date: string
 }
 
-const AllCustomers = () => {
+const CustomerOrders = () => {
   const [sortColumn, setSortColumn] = useState<string | null>(null)
   const [sortOrder, setSortOrder] = useState<SortOrder>(null)
   const [rowsPerPage, setRowsPerPage] = useState(5)
@@ -84,103 +88,29 @@ const AllCustomers = () => {
 
   const [orders, setOrders] = useState<Order[]>([
     {
-      orderId: "1",
+      orderId: "#ORD12345",
       customer: "Robert Fox",
       email: "robertfox@example.com",
       phone: "(671) 555-0110",
-
-      units: 1,
-      date: "2024-12-19",
+      doorModel: "Alima Core",
+      units: 200,
+      payment30: "Paid",
+      payment70: "Pending",
       orderStatus: "Confirmed",
-    },
-    {
-      orderId: "2",
-      customer: "Robert Lee",
-      email: "robertlee@example.com",
-      phone: "(671) 855-0110",
-
-      units: 5,
-      orderStatus: "Completed",
-      date: "2024-12-20",
-    },
-    {
-      orderId: "3",
-      customer: "Robert Chang",
-      email: "robertchang@example.com",
-      phone: "(671) 755-0110",
-
-      units: 4,
-      orderStatus: "Cancelled",
-      date: "2024-12-20",
-    },
-    {
-      orderId: "4",
-      customer: "Robert Lee",
-      email: "fox@example.com",
-      phone: "(671) 565-0110",
-
-      units: 12,
-      orderStatus: "Delivered",
-      date: "2024-12-20",
-    },
-    {
-      orderId: "5",
-      customer: "Robert Lee",
-      email: "robertfoxx@example.com",
-      phone: "(671) 555-0111",
-
-      units: 10,
-      orderStatus: "Pending",
-      date: "2024-12-20",
-    },
-    {
-      orderId: "6",
-      customer: "Robert Fox",
-      email: "robertfox@example.com",
-      phone: "(671) 555-0110",
-
-      units: 2,
-      orderStatus: "Confirmed",
+      location: "Maharashtra...",
       date: "2024-12-19",
     },
     {
-      orderId: "7",
+      orderId: "#ORD12346",
       customer: "Robert Lee",
       email: "robertlee@example.com",
       phone: "(671) 855-0110",
-
-      units: 21,
-      orderStatus: "Completed",
-      date: "2024-12-20",
-    },
-    {
-      orderId: "8",
-      customer: "Robert Chang",
-      email: "robertchang@example.com",
-      phone: "(671) 755-0110",
-
-      units: 5,
-      orderStatus: "Cancelled",
-      date: "2024-12-20",
-    },
-    {
-      orderId: "9",
-      customer: "Robert Lee",
-      email: "fox@example.com",
-      phone: "(671) 565-0110",
-
-      units: 12,
-      orderStatus: "Delivered",
-      date: "2024-12-20",
-    },
-    {
-      orderId: "10",
-      customer: "Robert Lee",
-      email: "robertfoxx@example.com",
-      phone: "(671) 555-0111",
-
-      units: 21,
-      orderStatus: "Pending",
+      doorModel: "Alima Elite",
+      units: 210,
+      payment30: "Paid",
+      payment70: "Paid",
+      orderStatus: "Confirmed",
+      location: "New Delhi...",
       date: "2024-12-20",
     },
   ])
@@ -275,7 +205,7 @@ const AllCustomers = () => {
   return (
     <div className="flex-3 relative mt-5 flex flex-col rounded-md border p-5">
       <div className="flex items-center justify-between border-b py-4">
-        <p className="text-2xl font-medium">All Customers</p>
+        <p className="text-2xl font-medium">Latest Pre-Orders</p>
         <div className="flex gap-4">
           <div className="flex h-[37px] w-[380px] items-center justify-between gap-3 rounded-md border px-3 py-1 text-[#707070]">
             <Image src="/DashboardImages/Search.svg" width={16} height={16} alt="Search Icon" />
@@ -311,40 +241,55 @@ const AllCustomers = () => {
                 onClick={() => toggleSort("orderId")}
               >
                 <MdOutlineCheckBoxOutlineBlank className="text-lg" />
-                S/N
-                <RxCaretSort />
-              </th>
-              <th
-                className="cursor-pointer whitespace-nowrap border-b border-l p-4 text-sm"
-                onClick={() => toggleSort("customer")}
-              >
-                <p className="flex items-center gap-2">
-                  Customer <RxCaretSort />
-                </p>
-              </th>
-              <th
-                className="cursor-pointer whitespace-nowrap border-b border-l p-4 text-sm"
-                onClick={() => toggleSort("email")}
-              >
-                <p className="flex items-center gap-2">
-                  Email <RxCaretSort />
-                </p>
-              </th>
-              <th
-                className="cursor-pointer whitespace-nowrap border-b border-l p-4 text-sm"
-                onClick={() => toggleSort("phone")}
-              >
-                <p className="flex items-center gap-2">
-                  Phone <RxCaretSort />
-                </p>
+                Order ID <RxCaretSort />
               </th>
 
+              <th
+                className="cursor-pointer whitespace-nowrap border-b border-l p-4 text-sm"
+                onClick={() => toggleSort("doorModel")}
+              >
+                <p className="flex items-center gap-2">
+                  Door Model <RxCaretSort />
+                </p>
+              </th>
               <th
                 className="cursor-pointer whitespace-nowrap border-b border-l p-4 text-sm"
                 onClick={() => toggleSort("units")}
               >
                 <p className="flex items-center gap-2">
-                  Total Orders <RxCaretSort />
+                  Unit Ordered <RxCaretSort />
+                </p>
+              </th>
+              <th
+                className="cursor-pointer whitespace-nowrap border-b border-l p-4 text-sm"
+                onClick={() => toggleSort("payment30")}
+              >
+                <p className="flex items-center gap-2">
+                  Payment (30%) <RxCaretSort />
+                </p>
+              </th>
+              <th
+                className="cursor-pointer whitespace-nowrap border-b border-l p-4 text-sm"
+                onClick={() => toggleSort("payment70")}
+              >
+                <p className="flex items-center gap-2">
+                  Payment (70%) <RxCaretSort />
+                </p>
+              </th>
+              <th
+                className="cursor-pointer whitespace-nowrap border-b border-l p-4 text-sm"
+                onClick={() => toggleSort("orderStatus")}
+              >
+                <p className="flex items-center gap-2">
+                  Order Status <RxCaretSort />
+                </p>
+              </th>
+              <th
+                className="cursor-pointer whitespace-nowrap border-b border-l p-4 text-sm"
+                onClick={() => toggleSort("location")}
+              >
+                <p className="flex items-center gap-2">
+                  Location <RxCaretSort />
                 </p>
               </th>
               <th
@@ -352,16 +297,7 @@ const AllCustomers = () => {
                 onClick={() => toggleSort("date")}
               >
                 <p className="flex items-center gap-2">
-                  Last Order Date <RxCaretSort />
-                </p>
-              </th>
-
-              <th
-                className="cursor-pointer whitespace-nowrap border-b border-l p-4 text-sm"
-                onClick={() => toggleSort("orderStatus")}
-              >
-                <p className="flex items-center gap-2">
-                  Status <RxCaretSort />
+                  Date <RxCaretSort />
                 </p>
               </th>
 
@@ -379,26 +315,13 @@ const AllCustomers = () => {
                     {order.orderId}
                   </div>
                 </td>
-                <td className="whitespace-nowrap border-b border-l px-4 py-2 text-sm">
-                  <div className="flex items-center gap-2 pr-4">
-                    <img src="/DashboardImages/UserCircle.png" alt="dekalo" className="icon-style" />
-                    <img src="/DashboardImages/UserCircle-dark.png" alt="dekalo" className="dark-icon-style " />
-                    {order.customer}
-                  </div>
-                </td>
-                <td className="whitespace-nowrap border-b border-l px-4 py-2 text-sm">
-                  <div className="flex items-center gap-2">
-                    <PiEnvelope />
-                    {order.email}
-                  </div>
-                </td>
-                <td className="whitespace-nowrap border-b border-l px-4 py-2 text-sm">
-                  <div className="flex items-center gap-2">
-                    <PiPhone />
-                    {order.phone}
-                  </div>
-                </td>
 
+                <td className="whitespace-nowrap border-b border-l px-4 py-2 text-sm">
+                  <div className="flex items-center gap-2">
+                    {doorModelIcons[order.doorModel]}
+                    {order.doorModel}
+                  </div>
+                </td>
                 <td className="whitespace-nowrap border-b border-l px-4 py-3 text-sm">
                   <div className="flex items-center gap-2">
                     <img src="/DashboardImages/Package.png" alt="dekalo" className="icon-style" />
@@ -406,13 +329,27 @@ const AllCustomers = () => {
                     {order.units}
                   </div>
                 </td>
-                <td className="whitespace-nowrap border-b border-l px-4 py-1 text-sm">
-                  <div className="flex items-center gap-2 pr-4">
-                    <img src="/DashboardImages/Calendar.png" alt="dekalo" />
-                    {order.date}
+                <td className="whitespace-nowrap border-b border-l px-4 py-3 text-sm">
+                  <div className="flex">
+                    <div
+                      style={getPaymentStyle(order.payment30)}
+                      className="flex items-center justify-center gap-1   rounded-full px-2 py-1"
+                    >
+                      <span className="size-2 rounded-full" style={dotStyle(order.payment30)}></span>
+
+                      {order.payment30}
+                    </div>
                   </div>
                 </td>
-
+                <td className="flex whitespace-nowrap border-b border-l px-4 py-3 text-sm">
+                  <div
+                    style={getPaymentStyle(order.payment70)}
+                    className="flex items-center justify-center gap-1   rounded-full px-2 py-1"
+                  >
+                    <span className="size-2 rounded-full" style={dotStyle(order.payment70)}></span>
+                    {order.payment70}
+                  </div>
+                </td>
                 <td className="whitespace-nowrap border-b border-l px-4 py-3 text-sm">
                   <div className="flex">
                     <div
@@ -424,10 +361,21 @@ const AllCustomers = () => {
                     </div>
                   </div>
                 </td>
-
+                <td className="whitespace-nowrap border-b border-l px-4 py-1 text-sm">
+                  <div className="flex items-center gap-2 pr-4">
+                    <IoLocationOutline />
+                    {order.location}
+                  </div>
+                </td>
+                <td className="whitespace-nowrap border-b border-l px-4 py-1 text-sm">
+                  <div className="flex items-center gap-2 pr-4">
+                    <img src="/DashboardImages/Calendar.png" alt="dekalo" />
+                    {order.date}
+                  </div>
+                </td>
                 <td className="whitespace-nowrap border-b border-l px-4 py-1 text-sm">
                   <div className="flex items-center gap-2 ">
-                    <Link href="/customers/customer-detail" className="button-oulined" type="button">
+                    <Link href="/orders/order-details" className="button-oulined" type="button">
                       <img src="/DashboardImages/Eye.png" alt="dekalo" className="icon-style" />
                       <img src="/DashboardImages/Eye-dark.png" alt="dekalo" className="dark-icon-style" />
                       <p className="text-xs">View Details </p>
@@ -472,7 +420,7 @@ const AllCustomers = () => {
       <div className="mt-4 flex items-center justify-between">
         <div className="flex items-center gap-1">
           <p>show rows</p>
-          <select value={rowsPerPage} onChange={handleRowsChange} className=" bg-[#F2F2F2] p-1">
+          <select value={rowsPerPage} onChange={handleRowsChange} className="select__rows p-1">
             <option value={5}>5</option>
             <option value={10}>10</option>
             <option value={20}>20</option>
@@ -604,4 +552,4 @@ const AllCustomers = () => {
   )
 }
 
-export default AllCustomers
+export default CustomerOrders
