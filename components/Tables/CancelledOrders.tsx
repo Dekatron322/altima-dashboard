@@ -209,8 +209,8 @@ const CancelledOrders = () => {
   ])
 
   const doorModelIcons: Record<string, React.ReactNode> = {
-    "Alima Core": <PiShieldChevronFill className="h-5 w-5" />,
-    "Alima Elite": <PiShieldPlusFill className="h-5 w-5" />,
+    "Alima Core": <PiShieldChevronFill className="size-5" />,
+    "Alima Elite": <PiShieldPlusFill className="size-5" />,
   }
 
   const getPaymentStyle = (paymentStatus: string) => {
@@ -330,14 +330,14 @@ const CancelledOrders = () => {
           <thead>
             <tr>
               <th
-                className="flex cursor-pointer items-center gap-2 whitespace-nowrap border-b px-4 py-4 text-sm"
+                className="flex cursor-pointer items-center gap-2 whitespace-nowrap border-b p-4 text-sm"
                 onClick={() => toggleSort("orderId")}
               >
                 <MdOutlineCheckBoxOutlineBlank className="text-lg" />
                 Order ID <RxCaretSort />
               </th>
               <th
-                className="cursor-pointer whitespace-nowrap border-b border-l px-4 py-4 text-sm"
+                className="cursor-pointer whitespace-nowrap border-b border-l p-4 text-sm"
                 onClick={() => toggleSort("customer")}
               >
                 <p className="flex items-center gap-2">
@@ -345,7 +345,7 @@ const CancelledOrders = () => {
                 </p>
               </th>
               <th
-                className="cursor-pointer whitespace-nowrap border-b border-l px-4 py-4 text-sm"
+                className="cursor-pointer whitespace-nowrap border-b border-l p-4 text-sm"
                 onClick={() => toggleSort("email")}
               >
                 <p className="flex items-center gap-2">
@@ -353,7 +353,7 @@ const CancelledOrders = () => {
                 </p>
               </th>
               <th
-                className="cursor-pointer whitespace-nowrap border-b border-l px-4 py-4 text-sm"
+                className="cursor-pointer whitespace-nowrap border-b border-l p-4 text-sm"
                 onClick={() => toggleSort("phone")}
               >
                 <p className="flex items-center gap-2">
@@ -361,7 +361,7 @@ const CancelledOrders = () => {
                 </p>
               </th>
               <th
-                className="cursor-pointer whitespace-nowrap border-b border-l px-4 py-4 text-sm"
+                className="cursor-pointer whitespace-nowrap border-b border-l p-4 text-sm"
                 onClick={() => toggleSort("doorModel")}
               >
                 <p className="flex items-center gap-2">
@@ -369,7 +369,7 @@ const CancelledOrders = () => {
                 </p>
               </th>
               <th
-                className="cursor-pointer whitespace-nowrap border-b border-l px-4 py-4 text-sm"
+                className="cursor-pointer whitespace-nowrap border-b border-l p-4 text-sm"
                 onClick={() => toggleSort("units")}
               >
                 <p className="flex items-center gap-2">
@@ -377,7 +377,7 @@ const CancelledOrders = () => {
                 </p>
               </th>
               <th
-                className="cursor-pointer whitespace-nowrap border-b border-l px-4 py-4 text-sm"
+                className="cursor-pointer whitespace-nowrap border-b border-l p-4 text-sm"
                 onClick={() => toggleSort("payment30")}
               >
                 <p className="flex items-center gap-2">
@@ -385,7 +385,7 @@ const CancelledOrders = () => {
                 </p>
               </th>
               <th
-                className="cursor-pointer whitespace-nowrap border-b border-l px-4 py-4 text-sm"
+                className="cursor-pointer whitespace-nowrap border-b border-l p-4 text-sm"
                 onClick={() => toggleSort("payment70")}
               >
                 <p className="flex items-center gap-2">
@@ -393,7 +393,7 @@ const CancelledOrders = () => {
                 </p>
               </th>
               <th
-                className="cursor-pointer whitespace-nowrap border-b border-l px-4 py-4 text-sm"
+                className="cursor-pointer whitespace-nowrap border-b border-l p-4 text-sm"
                 onClick={() => toggleSort("orderStatus")}
               >
                 <p className="flex items-center gap-2">
@@ -401,14 +401,14 @@ const CancelledOrders = () => {
                 </p>
               </th>
               <th
-                className="cursor-pointer whitespace-nowrap border-b border-l px-4 py-4 text-sm"
+                className="cursor-pointer whitespace-nowrap border-b border-l p-4 text-sm"
                 onClick={() => toggleSort("date")}
               >
                 <p className="flex items-center gap-2">
                   Date <RxCaretSort />
                 </p>
               </th>
-              <th className="whitespace-nowrap border-b border-l px-4 py-4 text-sm">
+              <th className="whitespace-nowrap border-b border-l p-4 text-sm">
                 <p className="flex items-center gap-2">Action</p>
               </th>
             </tr>
@@ -460,7 +460,7 @@ const CancelledOrders = () => {
                       style={getPaymentStyle(order.payment30)}
                       className="flex items-center justify-center gap-1   rounded-full px-2 py-1"
                     >
-                      <span className="h-2 w-2 rounded-full" style={dotStyle(order.payment30)}></span>
+                      <span className="size-2 rounded-full" style={dotStyle(order.payment30)}></span>
 
                       {order.payment30}
                     </div>
@@ -471,7 +471,7 @@ const CancelledOrders = () => {
                     style={getPaymentStyle(order.payment70)}
                     className="flex items-center justify-center gap-1   rounded-full px-2 py-1"
                   >
-                    <span className="h-2 w-2 rounded-full" style={dotStyle(order.payment70)}></span>
+                    <span className="size-2 rounded-full" style={dotStyle(order.payment70)}></span>
                     {order.payment70}
                   </div>
                 </td>
@@ -481,7 +481,7 @@ const CancelledOrders = () => {
                       style={getPaymentStyle(order.orderStatus)}
                       className="flex items-center justify-center gap-1   rounded-full px-2 py-1"
                     >
-                      <span className="h-2 w-2 rounded-full" style={dotStyle(order.orderStatus)}></span>
+                      <span className="size-2 rounded-full" style={dotStyle(order.orderStatus)}></span>
                       {order.orderStatus}
                     </div>
                   </div>

@@ -7,7 +7,7 @@ const OrderInfo = () => {
       <div className=" flex w-full  gap-2 border-b p-4">
         <p className="text-lg font-medium">Status</p>
         <div className="flex items-center justify-center gap-1 rounded-full bg-[#FBF4EC]  px-2 py-1 text-xs text-[#D28E3D]">
-          <span className="h-2 w-2 rounded-full bg-[#D28E3D]"></span>
+          <span className="size-2 rounded-full bg-[#D28E3D]"></span>
           Pending
         </div>
       </div>
@@ -33,7 +33,7 @@ const OrderInfo = () => {
           <div className="pr-3">
             <ul className="my-2 border-t">
               <li className="li__style mt-3">Product: Altima Elite</li>
-              <li className="li__style mt-3">Size: 96" x 42"</li>
+              <li className="li__style mt-3">Size: 96&quot; x 42&quot;</li>
               <li className="li__style mt-3">Frame Type: Reinforced</li>
               <li className="li__style mt-3">Finish: Glass – Frosted</li>
               <li className="li__style mt-3">Handle Placement: Right</li>
@@ -87,7 +87,7 @@ const OrderInfo = () => {
               <li className="li__style mt-3">Email: aisha.bello@example.com</li>
               <li className="li__style mt-3">Phone: +234-812-345-6789</li>
               <li className="li__style mt-3">Address: 15 Crescent Avenue, Abuja, Nigeria</li>
-              <li className="li__style mt-3">Notes: "Please deliver after 5 PM."</li>
+              <li className="li__style mt-3">Notes: &quot;Please deliver after 5 PM.&quot;</li>
             </ul>
           </div>
           <p className="mt-5">Admin Activity Report</p>

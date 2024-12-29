@@ -78,11 +78,11 @@ const FinanceChart = () => {
           <img src="/DashboardImages/Frame 482750.svg" alt="" className="w-full" />
           <div className="mt-4">
             <div className="flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-[#589E67]"></span>
+              <span className="size-2 rounded-full bg-[#589E67]"></span>
               <p className="text-base font-medium">Altima Core (65%)</p>
             </div>
             <div className="mt-2 flex items-center gap-2">
-              <span className="h-2 w-2 rounded-full bg-black"></span>
+              <span className="size-2 rounded-full bg-black"></span>
               <p className="text-base font-medium">Altima Elite (35%)</p>
             </div>
           </div>

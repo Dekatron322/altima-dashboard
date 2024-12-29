@@ -10,14 +10,14 @@ const PaymentInfo = () => {
           <div className="flex items-center gap-1">
             <p className="font-medium">30% payment</p>
             <div className="flex items-center justify-center gap-1 rounded-full bg-[#EEF5F0]  px-2 py-1 text-xs text-[#589E67]">
-              <span className="h-2 w-2 rounded-full bg-[#589E67]"></span>
+              <span className="size-2 rounded-full bg-[#589E67]"></span>
               Paid
             </div>
           </div>
           <div className="flex items-center gap-1">
             <p className="font-medium">70% payment</p>
             <div className="flex items-center justify-center gap-1 rounded-full bg-[#FBF4EC]  px-2 py-1 text-xs text-[#D28E3D]">
-              <span className="h-2 w-2 rounded-full bg-[#D28E3D]"></span>
+              <span className="size-2 rounded-full bg-[#D28E3D]"></span>
               Pending
             </div>
           </div>
@@ -77,7 +77,7 @@ const PaymentInfo = () => {
               <li className="li__style mt-3">Email: aisha.bello@example.com</li>
               <li className="li__style mt-3">Phone: +234-812-345-6789</li>
               <li className="li__style mt-3">Address: 15 Crescent Avenue, Abuja, Nigeria</li>
-              <li className="li__style mt-3">Notes: "Please deliver after 5 PM."</li>
+              <li className="li__style mt-3">Notes: &quot;Please deliver after 5 PM.&quot;</li>
             </ul>
           </div>
           <p className="mt-5 font-medium">Admin Activity Report</p>

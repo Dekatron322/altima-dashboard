@@ -40,8 +40,8 @@ export default function CustomPagination({
             onClick={() => handlePageClick(index + 1)}
             className={`px-2 py-1 ${
               currentPage === index + 1
-                ? "h-10 w-10 rounded-2xl bg-[#044982] text-white"
-                : "h-10 w-10 rounded-2xl border-2 border-[#BDBDBD] text-[#044982]"
+                ? "size-10 rounded-2xl bg-[#044982] text-white"
+                : "size-10 rounded-2xl border-2 border-[#BDBDBD] text-[#044982]"
             }`}
           >
             {index + 1}
