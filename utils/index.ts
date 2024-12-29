@@ -661,6 +661,28 @@ export const PaymentInfo = [
   },
 ]
 
+export const CustomerInfo = [
+  {
+    id: 1,
+    src: "/DashboardImages/Frame 47603.png",
+    name: "Total Customers",
+    balance: "238",
+  },
+  {
+    id: 2,
+    src: "/DashboardImages/Frame 47603 (1).png",
+    name: "Repeat Customers",
+    balance: "20",
+  },
+
+  {
+    id: 3,
+    src: "/DashboardImages/Frame 47603 (2).png",
+    name: "Pending Payment Customers",
+    balance: "23",
+  },
+]
+
 export const PowerUtility = [
   {
     id: 1,
