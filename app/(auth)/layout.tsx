@@ -2,7 +2,7 @@ import { Metadata } from "next"
 import "styles/tailwind.css"
 
 export const metadata: Metadata = {
-  title: "AMD Facility Management",
+  title: "Altima Admin Dashboard",
   description:
     "We are an indigenous Facility Management company fully incorporated in Nigeria. We provide services for commercial and residential buildings, �nancial institutions, military, federal and state government, hotels and large corporations",
   twitter: {

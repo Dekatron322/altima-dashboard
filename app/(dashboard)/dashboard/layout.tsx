@@ -2,7 +2,7 @@ import SideBar from "components/Sidebar/Sidebar"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Admin Dashboard | Caregivers Hospital",
+  title: "Altima Dashboard",
   description: "We are a family with a major focus in both primary and secondary healthcare service.",
   twitter: {
     card: "summary_large_image",
