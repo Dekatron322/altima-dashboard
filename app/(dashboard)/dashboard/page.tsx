@@ -39,7 +39,7 @@ export default function Dashboard() {
                 <div className="border-l"></div>
                 <button className="button-primary-two" type="button">
                   <img src="/DashboardImages/Plus.png" alt="dekalo" />
-                  <p>Add Pre-order</p>
+                  <p>Add new Pre-order</p>
                 </button>
               </div>
             </div>
